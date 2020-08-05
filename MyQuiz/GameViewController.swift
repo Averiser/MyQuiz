@@ -82,6 +82,8 @@ class GameViewController: UIViewController, UITableViewDelegate, UITableViewData
     Answer(text: "cooked", correct: false),
     Answer(text: "were cooking", correct: true)
     ]))
+    
+    gameModels.shuffle()
   }
   
   //    = ["... two kittens.", "... Tom play tennis?",  "There isn't ... money in my pockets.", "What did she ... you about it?", "How much ... ", "We ..., when the phone rang."]
@@ -102,6 +104,15 @@ class GameViewController: UIViewController, UITableViewDelegate, UITableViewData
   
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     tableView.deselectRow(at: indexPath, animated: true)
+    
+//    // initialize an empty array
+//   // var gameModels = [Question]()  - initialized above
+//    
+//    // create a random number between 0 and the number of items in the array
+//    var randomGameModel = arc4random_uniform(UInt32(gameModels.count - 1))
+//    
+//    // randomly add an item from the numbers array to the empty array
+//    gameModels.append(
     
     guard let question = currentQuestion else { return }
     
